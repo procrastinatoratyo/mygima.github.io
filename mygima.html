@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>MY GIMA</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  
+  <style>
+  body {
+    font: Lato, sans-serif;
+    line-height: 8;
+    color: #818181;
+  }
+  h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #303030;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  h4 {
+    
+    line-height: 2.375em;
+    color: #303030;
+
+    
+  }  
+  h5 {
+    font-size: 19px;
+    line-height: 5em;
+    color: #303030;
+
+   
+  }  
+  .jumbotron h1 {
+        color: #000000;
+       
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  .menu-bar{
+        background: rgb(0,100,0);
+        text-align: center;
+        width: 100%;
+        top: 5%;
+        height: 60px;
+        position: fixed;
+       
+       
+    }
+    .menu-bar ul{
+        display: inline-flex;
+        list-style:none;
+        color: #0b0b0b;
+        
+    }
+    .menu-bar ul li{
+        width: 5px;
+        margin: 11px;
+        padding: 11px;
+        
+        
+    }
+    .menu-bar ul li a{
+        text-decoration: none;
+        color: #030303;
+        float: left;
+        display: block;
+        text-align: center;
+        padding: 1px 1px;
+      
+    }
+    .active, .menu-bar ul li:hover
+    {
+        background: #b50781;
+        border-radius: 1px;
+        
+    }
+
+  .container-fluid {
+       position: relative;
+   color: wheat;
+  }
+  .bg-grey {
+    background-color: #854646;
+  }
+  .logo-small {
+    color: #ffb800;
+    font-size: 50px;
+  }
+  .logo {
+    color: #ffb800;
+    font-size: 200px;
+  }
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+  }
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #ffb800;
+  }
+  .carousel-indicators li {
+    border-color: #ffb800;
+  }
+  .carousel-indicators li.active {
+    background-color: #ffb800;
+  }
+  .item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+  }
+  .item span {
+    font-style: normal;
+  }
+  .panel {
+    border: 1px solid #ffb800; 
+    border-radius:0 !important;
+    transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+    border: 1px solid #ffb800;
+    background-color: #fff !important;
+    color: #ffb800;
+  }
+  .panel-heading {
+    color: #fff !important;
+    background-color: #ffb800 !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+    background-color: white !important;
+  }
+  .panel-footer h3 {
+    font-size: 32px;
+  }
+  .panel-footer h4 {
+    color: #aaa;
+    font-size: 14px;
+  }
+  .panel-footer .btn {
+    margin: 15px 0;
+    background-color: #ffb800;
+    color: #fff;
+  }
+  .navbar {
+    margin-bottom: 0;
+    background-color: #D1B2bb;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+    color: #ffffff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #ffb800 !important;
+    background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+  }
+  footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #ffb800;
+  }
+  .slideanim {visibility:hidden;}
+  .slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+      width: 100%;
+      margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .logo {
+      font-size: 150px;
+    }
+  }
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a href="#myPage" title="To Top" img src="logo.svg" style="position: 
+        absolute; width: 92px; height: 87px; left: 100px; top: 15px;">
+        <span class="glyphicon glyphicon-chevron-up"></span>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#home">OurLOVE</a></li>
+        <li><a href="#kuanua">FUN</a></li>
+        <li><a href="#pidgin">IMissYou</a></li>
+        <li><a href="#theme">YOU</a></li>
+        <li><a href="#about">FUTURE</a></li>
+      </ul>
+    </div>
+  </div>
+  
+</nav>
+</body>
+
+<div class="jumbotron text-center">
+    <img src="mylove.jpg" style="position: 
+        static; width:100%; height:auto;">
+  <h1>HAPPY VALENTINE'S DAY</h1> 
+  <p>MR THEOPHYLLUS GIMARALEMA JAMES BOGAN!!</p> 
+  <p> From your Min</p>
+  </div>
+
+  <!-- Container (Home Section) -->
+<div id="home" class="container-fluid">
+    <img src="gima.jpg" style="position: 
+        static; width: 100%; height: auto;">
+    
+    <h4 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" >Our Love is something I will cherish forever. I love you every single day. At times, 
+        I get annoyed but at the end of the day, I choose you. Always and forever. You have no idea how much you mean to me 
+        in so many ways that even words can't express what it is. Our love at first phone call, lol. Who would have thought
+        you'd be this very important person that I'm also writing a webpage about hehe. Don't worry, me painim wok because I'm not
+        there with you physically to celebrate this day. I think it's called a "VALENTINES DAY." We both agreed to skip valentines 
+        but I just had to. Cringe with all the webpage and shit but it's something for you. If youre reading this, it's 
+        currently 10:28pm 2/13/2024, and I'm working on this right now and I'm sorry for not replying to your messages
+         because the thought just came in this afternoon, lol. I cannot imagine
+        my life without you. I LOVE YOU AND I MISS YOU SO MUCH. 
+    
+    </h4>
+    
+</div>
+
+<!-- Container (Kuanua Section) -->
+<div id="kuanua" class="container-fluid text-center">
+    <img src="fun.jpg" style="position: 
+    static; width: 100%; height: auto;">
+
+    <h5 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        You bring out the best in me. In every aspect of my life. Emotionally, physically, spiritually and everything
+        in between. You make life fun. We do stupid, aimless, memorable things and at the end of it all, we acknowledge
+        each other. Supporting each other. Loving and understanding one another. I LOVE YOU. Here's to making
+        more memories.
+    </h5>
+</div>
+
+<!-- Container (Pidgin Section) -->
+<div id="pidgin" class="container-fluid text-center">
+    <img src="imy.webp" style="position: 
+    static; width: 100%; height: auto;">
+    <img src="imy2.jpg" style="position: 
+    static; width: 100%; height: auto;">
+    <img src="imy3.jpg" style="position: 
+    static; width: 100%; height: auto;">
+    <h1 style="font-family: 'Times New Roman', Times, serif;">ALL I CAN SAY IS I MISS SO SO MUCH MY LOVE. 
+        I WISH YOU WERE HERE WITH ME RIGHT NOW. I MISSSSSS YOUUUUUUU MY GIMA</h1>
+    
+</div>
+<!-- Container (Theme Section) -->
+<div id="theme" class="container-fluid text-center">
+    <img src="you.jpg" style="position: 
+    static; width: 100%; height: auto; ">
+    <h4 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" > All has been said each and everyday.
+        ONCE AGAIN. It's all you, HANDSOME. Everyday I want you, I crave you, I want to kill you at times, but every other times
+        I want to love and spoil you effortlessly, in every damn way. You make me the happiest my LOVE. You are an absolute angel. Heaven sent. BOSS KING ME BA MAUS WARA BUT YOU YET BA SAWE PINIS. Sit 
+        on your face eh, chair blo me. I love you in every way. You are truly amazing inside and out. I'm typing on the laptop right now, 
+        but han blo will never get tired. If you know then you know, lol. Hehehe. Anyways, pasin kilim you Awa Mero LALOKAU BUAIGU Morobe Central Blo Me. I 
+        Love You FOREVER. Sexy king ceo manager supervisor blo lewa. Heart beat blo me sa kolim name blo you. You stap lo best blo you!!!
+    </h4>
+</div>
+<!-- Container (About Section) -->
+<div id="about" class="container-fluid text-center">
+    <img src="future.jpg" style="position: 
+    static; width: 100%; height: auto;">
+    <h1 style="font-family: cursive;">I LOVE YOU FOREVER. HERE'S TO THE FUTURE WITH YOU</h1>
+</div>
+
+</html>
